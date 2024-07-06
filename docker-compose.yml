@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: .devcontainer/frontend/Dockerfile
+    volumes:
+      - ./frontend:/workspace
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+
+  backend:
+    build:
+      context: .
+      dockerfile: .devcontainer/backend/Dockerfile
+    volumes:
+      # - ./.devcontainer:/workspace/.devcontainer
+      # - ./frontend:/workspace/frontend
+      # - ./backend:/workspace/backend
+      - ./:/workspace/
+    # command: /bin/bash -c "while sleep 1000; do :; done"
+    ports:
+      - "8000:8000"
+    command: sleep infinity  # コンテナ起動後に停止しないようにする
+    init: true  # initプロセスを有効にする
+    environment:
+      - FLASK_APP=app.py

@@ -1,0 +1,8 @@
+{
+    "name": "Backend Development Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "../.."
+    },
+    "workspaceFolder": "/workspace/backend"
+}

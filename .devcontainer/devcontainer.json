@@ -1,0 +1,21 @@
+{
+    "name": "Full Stack Development Container",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "backend",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "ms-python.vscode-pylance"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            // "workspaceMount": "source=${localWorkspaceFolder}/frontend,target=/workspace/frontend,type=bind,consistency=cached"
+        }
+    }
+}
